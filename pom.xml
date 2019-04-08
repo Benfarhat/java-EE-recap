@@ -6,4 +6,7 @@
   <packaging>pom</packaging>
   <name>Java EE Recap</name>
   <description>Some examples to recap java EE stack</description>
+  <modules>
+  	<module>jsp-servlet</module>
+  </modules>
 </project>
