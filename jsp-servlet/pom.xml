@@ -5,7 +5,11 @@
     <artifactId>javaee.recap</artifactId>
     <version>0.0.1</version>
   </parent>
+  
+  <groupId>javaee.recap</groupId>
   <artifactId>jsp-servlet</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1</version>
   <name>JSP, Servlet, Filter, Listener Examples</name>
   
   <properties>
@@ -24,7 +28,7 @@
   </dependencies>
 
   <build>
-    <finalName>test.servlet</finalName>
+    <finalName>jsp-servlet</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -59,4 +63,5 @@
       </plugins>
     </pluginManagement>
   </build>
+
 </project>
