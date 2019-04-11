@@ -19,7 +19,7 @@
 <%@ include file="includes/menu.jsp"%>
 <!-- /Menu  -->
 <!-- Content -->
-  <main role="main" class="${layout} pt-5">  
+  <main role="main" id="content" class="${layout} pt-5">  
 <%@ include file="includes/content/home.jsp"%>
   </main>  
 <!-- /Content  -->
