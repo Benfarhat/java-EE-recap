@@ -1,5 +1,7 @@
 package servlets;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -41,11 +43,12 @@ public class SessionLocalFilter implements Filter {
 	    HttpServletResponse res = (HttpServletResponse) response;
 	    HttpSession session = req.getSession();
 	    
-		if(req.getParameter("sessionLocale") != null) {
-			try {
-				String propertyFile = this.getClass().getResource("/messages_" + req.getParameter("sessionLocale") + ".properties").getPath();
-				context.log(propertyFile);
-				context.log("changing language to: " + req.getParameter("sessionLocale"));
+		if (req.getParameter("sessionLocale") != null) {
+			// Instead of checking which language is select, we just have to check if resource file exist.
+			// Like that, if we want to add a language, we don't have to change the code but just create and comple the ".propertie" file
+			try (FileInputStream fs = new FileInputStream (new File(this.getClass()
+					.getResource("/messages_" + req.getParameter("sessionLocale") + ".properties")
+					.getPath()))){
 				// With session
 				session.setAttribute("lang", req.getParameter("sessionLocale"));
 				
@@ -53,9 +56,14 @@ public class SessionLocalFilter implements Filter {
 	            Cookie cookie = new Cookie("lang", req.getParameter("cookieLocale"));
 	            res.addCookie(cookie);
 			} catch (NullPointerException npe) {
-				context.log("Transation resource file did not exist.");
+				context.log("Translation resource file /messages_" + req.getParameter("sessionLocale") + ".properties did not exist.");
 			}
-		} 
+		}
+		if (req.getParameter("sessionLayout") != null) {
+			String layout = req.getParameter("sessionLayout").equalsIgnoreCase("container") ? "container" : "other";
+			session.setAttribute("layout", layout);	
+		}
+		
 		chain.doFilter(request, response);
 	}
 

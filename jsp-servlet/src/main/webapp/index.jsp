@@ -13,8 +13,7 @@
 <!-- /Header  -->
 </head>
 <body>
-<% String layoutf = "container"; %>
-<c:set var = "layout" value = "container"/>
+<c:set var = "layout" value = "${sessionScope.layout}"/>
 <!-- Menu -->
 <%@ include file="includes/menu.jsp"%>
 <!-- /Menu  -->
