@@ -10,5 +10,6 @@
   <modules>
   	<module>jsp-servlet</module>
     <module>jsp.servlet</module>
+    <module>ioc01</module>
   </modules>
 </project>

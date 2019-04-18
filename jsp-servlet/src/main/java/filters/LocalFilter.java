@@ -1,4 +1,4 @@
-package servlets;
+package filters;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,11 +21,11 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class SessionLocalFilter
  */
 @WebFilter(filterName = "SessionLocaleFilter", urlPatterns = {"/*"})
-public class SessionLocalFilter implements Filter {
+public class LocalFilter implements Filter {
 
 	private FilterConfig config;
 	
-    public SessionLocalFilter() {}
+    public LocalFilter() {}
 
 	public void destroy() {}
 	
