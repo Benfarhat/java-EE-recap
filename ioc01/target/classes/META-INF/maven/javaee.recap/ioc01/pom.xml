@@ -7,4 +7,22 @@
   </parent>
   <artifactId>ioc01</artifactId>
   <name>Inversion of control</name>
+  <dependencies>
+  
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>5.1.6.RELEASE</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+	<dependency>
+	    <groupId>javax.annotation</groupId>
+	    <artifactId>javax.annotation-api</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+
+  
+  </dependencies>
 </project>
