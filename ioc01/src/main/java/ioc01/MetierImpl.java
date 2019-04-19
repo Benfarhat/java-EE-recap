@@ -5,7 +5,8 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("metier")
+// @Component("metier")
+@Service("metier")
 public class MetierImpl implements IMetier {
 	@Autowired
 	@Resource(name="dao")
