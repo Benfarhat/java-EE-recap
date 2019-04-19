@@ -1,8 +1,10 @@
 package ioc01;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component("dao")
+// @Component("dao")
+@Repository("dao")
 public class DaopImpl implements IDao {
 
 	public Double getTemperature() {
